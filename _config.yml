@@ -3,6 +3,7 @@ description: Open-Source Research & AI-Generated Summaries for the Frosty Tool S
 
 theme: minima
 baseurl: /FrostyToolSuite-Research-Notes
+github_username: 8bllgrl
 
 exclude:
   - README.md
