@@ -13,7 +13,7 @@ Ghidra scripts may later be included.
 
 ## 🧭 
 
-* **[AI Generated Summaries](/ai-summaries/frostyeditor)**: automatically generated documentation for namespaces and folders.
+* **[AI Generated Summaries](/ai-summaries/example)**: automatically generated documentation for namespaces and folders.
 
 ## Goal
 providing clear maps of the Frosty Tool Suite. 
