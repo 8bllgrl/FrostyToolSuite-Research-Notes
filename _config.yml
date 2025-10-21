@@ -2,6 +2,7 @@ title: Frosty Tool Suite Research & Summaries
 description: Open-Source Research & AI-Generated Summaries for the Frosty Tool Suite. Developer purposes.
 
 theme: minima
+baseurl: /FrostyToolSuite-Research-Notes
 
 exclude:
   - README.md
