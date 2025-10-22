@@ -16,8 +16,11 @@ The core mission of this project is to exercise the freedoms guaranteed to every
 
 
 The proprietary distributors of the updated Frosty Toolsuite binaries are in direct violation of the GPL-3.0's most critical requirement: the obligation to provide corresponding source code.
+
 > The Distributor's Obligation (Preamble): The distributor must "make sure that they [recipients], too, receive or can get the source code".
+
 > The Violation (Section 6): Distributors who conveyed these non-source forms (binaries/DLLs) violated Section 6 (Conveying Non-Source Forms), which strictly requires: "You may convey a covered work in object code form... provided that you also convey the machine-readable Corresponding Source under the terms of this License".
+
 > The Scope: This violation is critical because "The GNU General Public License does not permit incorporating your program into proprietary programs".
 
 
