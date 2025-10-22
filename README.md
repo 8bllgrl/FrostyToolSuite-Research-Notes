@@ -26,6 +26,8 @@ The proprietary distributors of the updated Frosty Toolsuite binaries are in dir
 
 In other words, 
 
-The goal of this project is to restore code rights to the open-source modding community by reconstructing features withheld behind proprietary paywalls. This work is conducted on the express condition that the resulting code is used solely for single-player modifications, explicitly prohibiting its use to gain any unfair advantage in multiplayer environments.
+The goal of this project is to restore code rights to the open-source modding community by reconstructing features withheld behind proprietary paywalls. 
+
+This work is conducted on the express condition that the resulting code is used solely for single-player modifications, explicitly prohibiting its use to gain any unfair advantage in multiplayer environments.
 
 ✌️
