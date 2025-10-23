@@ -8,39 +8,72 @@ permalink: /ai-summaries/
 
 Welcome to the AI-generated documentation hub. The codebase is organized here based on the primary logical projects within the Frosty Tool Suite for ease of developer navigation.
 
-> **Note:** The links below assume you will create files with the corresponding names (e.g., `frosty-editor.md`, `frosty-sdk/managers.md`) within the `_ai-summaries/` directory.
+## 💻 1. Core Applications & Libraries
 
-## 💻 1. Core Applications
+These links cover the main executable projects and the foundational libraries that provide common UI functionality.
 
-These are the main executable projects that users and developers interact with.
+| Project/Area | Source Directories | Summary Link |
+| :--- | :--- | :--- |
+| **Frosty Editor** | `FrostyEditor/` (`Commands/`, `Windows/`) | [Editor Core & Windows](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-editor) |
+| **Frosty Mod Manager** | `FrostyModManager/` (`Compression/`, `Windows/`) | [Mod Manager Logic](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-mod-manager) |
+| **Frosty Commands** | `FrostyCmd/` (`Program.cs`, `ProfileCreator.cs`) | [Command-Line Utilities](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-cmd) |
+| **Frosty Controls** | `FrostyControls/` | [Custom UI Components](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-controls) |
 
-| Project Name | Source Code Directory | Description | Summary Link |
-| :--- | :--- | :--- | :--- |
-| **Frosty Editor** | `FrostyEditor/` | The primary GUI for asset viewing and modification. | [Frosty Editor Core](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-editor) |
-| **Frosty Mod Manager** | `FrostyModManager/` | The separate application for compiling, installing, and managing mods. | [Mod Manager Core](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-mod-manager) |
-| **Frosty Cmd** | `FrostyCmd/` | Command-line utilities for hashing, database dumping, and other background tasks. | [FrostyCmd Utilities](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-cmd) |
+---
 
-## 🧩 2. Foundational Libraries
+## ⚙️ 2. FrostyPlugin (Shared Core API)
 
-These libraries contain the core logic, data structures, and APIs shared across the applications and plugins.
+This is the central framework for asset editing, plugin registration, and resource handling.
 
-### 📚 Frosty Sdk (`FrostySdk/`)
-The foundation of the toolset, containing low-level game-specific data, profiles, and file-handling logic.
+| Sub-Area | Source Directories | Summary Link |
+| :--- | :--- | :--- |
+| **Asset Editor Controls** | `FrostyPlugin/Controls/`, `FrostyPlugin/Controls/Editors/` | [UI Elements & Type Editors](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-plugin/controls) |
+| **Plugin System & Extensibility** | `FrostyPlugin/Attributes/`, `FrostyPlugin/Extensions/` | [Attributes & Extensions](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-plugin/extensions) |
+| **Mod & Resource Structure** | `FrostyPlugin/Mod/`, `FrostyPlugin/IO/` | [Modding Data Types & IO](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-plugin/mod-structure) |
+| **Managers & Utilities** | `FrostyPlugin/Managers/`, `FrostyPlugin/Utils/` | [Plugin Managers & Core Utilities](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-plugin/managers) |
+| **Viewport & Rendering** | `FrostyPlugin/Viewport/`, `FrostyPlugin/Screens/` | [3D Viewport & Screen Logic](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-plugin/viewport) |
 
-* **[SDK Overview](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-sdk/):** High-level summary and structure of the SDK project.
-* **[Managers](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-sdk/managers):** Asset loading, file system, resource, and key management (`AssetManager.cs`, `FileSystemManager.cs`).
-* **[Input/Output (IO)](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-sdk/io):** Readers and Writers for core file formats like EBX, CAS, and CAT (`EbxReader.cs`, `CasReader.cs`).
-* **[EBX Types](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-sdk/ebx):** Core data types and references used in the Frostbite engine's EBX assets (`PointerRef.cs`, `ResourceRef.cs`).
+---
 
-### ⚙️ Frosty Plugin (`FrostyPlugin/`)
-The shared core library for common functionality, UI components, and the plugin registration system.
+## 📚 3. FrostySdk (Low-Level Data Handling)
 
-* **[Plugin Overview](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-plugin/):** High-level summary and the core plugin registration mechanism.
-* **[UI Controls & Editors](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-plugin/controls):** Base classes for asset editors, property grids, and UI components (`FrostyAssetEditor.cs`, `FrostyPropertyGrid.cs`).
-* **[Mod Structure](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-plugin/mod-structure):** Defines the structure of a loaded mod and its resources (`EbxResource.cs`, `IFrostyMod.cs`).
+The SDK provides the low-level logic for interacting with game files, data structures, and profiles.
 
-## 🔌 3. Plugins
+| Sub-Area | Source Directories | Summary Link |
+| :--- | :--- | :--- |
+| **Asset Management** | `FrostySdk/Managers/`, `FrostySdk/Managers/Loaders/` | [Asset/Resource/Key Management & Loaders](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-sdk/managers) |
+| **I/O and Serialization** | `FrostySdk/IO/` (`CasReader.cs`, `EbxReader.cs`, `DbReader.cs`) | [Low-Level File I/O Logic](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-sdk/io) |
+| **EBX Data Types** | `FrostySdk/Ebx/` (`PointerRef.cs`, `ResourceRef.cs`, `CString.cs`) | [Frostbite EBX Data Structures](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-sdk/ebx) |
+| **Profiles & Game Keys** | `FrostySdk/Profiles/` (`BF1SDK.dll`, `AnthemSDK.dll`, etc.) | [Game Profiles and SDK DLLs](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-sdk/profiles) |
+| **Hashing & Deobfuscation** | `FrostyHash/`, `FrostySdk/Deobfuscators/` | [Hashing and Game Obfuscation Logic](/FrostyToolSuite-Research-Notes/ai-summaries/frosty-sdk/hashing) |
 
-The directory containing extension projects that add support for specific game features or specialized editing capabilities.
+---
 
-* **[All Plugins Index](/FrostyToolSuite-Research-Notes/ai-summaries/plugins/):** A master list and overview of the various plugins available, from Texture to Animation Editors.
+## 🔧 4. Mod Execution & Support
+
+Logic for applying and running mods in-game.
+
+| Sub-Area | Source Directories | Summary Link |
+| :--- | :--- | :--- |
+| **Mod Execution Actions** | `FrostyModSupport/Actions/` (`CasModExecutor.cs`, `FifaModExecutor.cs`) | [Game-Specific Mod Execution Logic](/FrostyToolSuite-Research-Notes/ai-summaries/mod-support/actions) |
+| **Legacy Scripting** | `FrostyModSupport/` (`FrostyLegacyScripting.cs`) | [Legacy Mod Scripting Support](/FrostyToolSuite-Research-Notes/ai-summaries/mod-support/legacy) |
+
+---
+
+## 🔌 5. Individual Plugins
+
+These are separate, specialized projects for specific game features or asset types. Each project below should have its own dedicated summary page.
+
+| Plugin Project Name | Source Directory | Summary Link |
+| :--- | :--- | :--- |
+| **Animation Editor** | `Plugins/AnimationEditorPlugin/` | [Animation Editor Plugin](/FrostyToolSuite-Research-Notes/ai-summaries/plugins/animation-editor) |
+| **MeshSet & Skeleton Editor** | `Plugins/MeshSetPlugin/` | [MeshSet and Skeleton Plugin](/FrostyToolSuite-Research-Notes/ai-summaries/plugins/meshset) |
+| **Sound Editor** | `Plugins/SoundEditorPlugin/` | [Sound and Wave Editor Plugin](/FrostyToolSuite-Research-Notes/ai-summaries/plugins/sound-editor) |
+| **Texture Editor** | `Plugins/TexturePlugin/` | [Texture Asset Plugin](/FrostyToolSuite-Research-Notes/ai-summaries/plugins/texture) |
+| **Localization (Bioware/FS)** | `Plugins/BiowareLocalizationPlugin/`, `Plugins/FsLocalizationPlugin/` | [Localization Plugins](/FrostyToolSuite-Research-Notes/ai-summaries/plugins/localization) |
+| **Lua & Scripting** | `Plugins/LuaPlugin/` | [Lua Editor and Runner Plugin](/FrostyToolSuite-Research-Notes/ai-summaries/plugins/lua) |
+| **Object Variation** | `Plugins/ObjectVariationPlugin/` | [Object Variation Plugin](/FrostyToolSuite-Research-Notes/ai-summaries/plugins/object-variation) |
+| **Bundle Editor** | `Plugins/BundleEditorPlugin/`, `Plugins/DelayLoadBundlePlugin/` | [Bundle & DelayLoad Plugins](/FrostyToolSuite-Research-Notes/ai-summaries/plugins/bundle) |
+| **Fifa Legacy** | `Plugins/Fifa/` (All sub-plugins) | [Fifa Legacy Tools](/FrostyToolSuite-Research-Notes/ai-summaries/plugins/fifa-legacy) |
+| **Type Explorer** | `Plugins/TypeExplorerPlugin/` | [Type Explorer Plugin](/FrostyToolSuite-Research-Notes/ai-summaries/plugins/type-explorer) |
+| **All Other Plugins** | *(e.g., `SvgImagePlugin/`, `EbxToXmlPlugin/`, etc.)* | [Miscellaneous Plugins Index](/FrostyToolSuite-Research-Notes/ai-summaries/plugins/misc) |
